@@ -31,6 +31,6 @@ ul {
 }
 
 .navigation__menu {
-  flex-direction: row;
+  display: flex;
   justify-content: space-between;
 }
