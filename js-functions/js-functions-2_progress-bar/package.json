@@ -1,7 +1,7 @@
 {
-  "name": "js-functions_pizza-analyzer",
+  "name": "js-functions-2_progress-bar",
   "version": "0.0.0-unreleased",
-  "description": "js-functions: pizza-analyzer",
+  "description": "",
   "main": "index.html",
   "scripts": {
     "lint": "npx -y eslint@latest .",
