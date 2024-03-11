@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Personal Profile Form</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <header>Create your Personal Profile</header>
+    <main>
+      <form aria-labelledby="personal-profile">
+     <fieldset aria-describedby="personal-information">
+      <p>We want to get to know you! Please enter your personal information.</p>
+      <h2 id="header-personal-info">Personal Information</h2>
+      <fieldset id="personal-info">
+      <label for="first-name">First Name:</label>
+      <input id="first-name" name="first-name"></input>
+
+      <label for="last-name">Last Name:</label>
+      <input id="last-name" name="last-name"></input>
+      <label for="birthday">Your Birthday:</label>
+      <input id="birthday" name="birthday" type="date" placeholder="dd / mm / yyyy">
+    </fieldset>
+    <p>Can you tell us a little bit more? We want to annoy you with unwanted ads.</p>
+    <h2 id="header-further-info">Further Information</h2>
+      <fieldset aria-describedby="further information">
+        <label for="color">Favourite Color:</label>
+        <input id="color" name="color" type="color" value="orange"></input>
+        <label for="pet">What's your favourite pet?</label>
+<select id="pet" name="pet">
+  <option value="" selected disabled>--Please select an option--</option>
+<option value="fish">Fish</option>
+<option value="chinchilla">Chinchilla</option>
+<option value="budgie">Budgie</option>
+</select>
+
+      </fieldset>
+      <button class="submit-button" js-data="submit-button">Submit</button>
+    </form>
+    </main>>
+
+  </fieldset>
+  
+  </body>
+</html>

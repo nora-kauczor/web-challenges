@@ -50,8 +50,7 @@ ul {
   bottom: 0;
   left: 0;
   height: 10px;
-  /* Hier geändert vorher 10px.. */
-  width: 0;
+  width: 10px;
   background-color: red;
   transition: width 0.05s ease;
 }

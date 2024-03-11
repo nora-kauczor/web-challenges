@@ -19,11 +19,9 @@ the start of the introduction. */
   /* Unit Variables*/
   --gap: 20px;
 
-  /* "beyonder", nk */
   --header-brand: 4rem;
   --header-brand-line-height: 7rem;
 
-  /* "...go further", nk */
   --header-text: 1.5rem;
   --header-text-line-height: 2rem;
 
@@ -32,7 +30,6 @@ the start of the introduction. */
 
   /* Calculations */
   /* Calculating the header height */
-  /* der ganze header: größe des teils in dem "beyond" steht + teil in dem "...go further" steht + drei mal der allg. elemente-abstand (?), nk */
   --header-height: calc(
     var(--header-brand-line-height) + var(--header-text-line-height) +
       (3 * var(--gap))
@@ -46,17 +43,6 @@ the start of the introduction. */
   --main-content-margin-top: calc(var(--header-height) + var(--nav-height));
 }
 
-/* Für Darkmode können zentral die Farben in Roots geändert werden ?  */
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --inky-black: #0d070a;
-    --forest-green: #48594d;
-    --navy-blue: #253b40;
-    --dark-beige: #a69665;
-    --rust-orange: #bf754b;
-    --eggshell-white: #f0e2c4;
-  }
-} */
 /* ==[ INTRODUCTION ]== */
 
 /* !-- In short: Look at the selectors, then scroll down to the bottom of the file. 
@@ -92,24 +78,12 @@ body {
 }
 
 /* Header & Navigation */
-/* Header: Höhe kleiner wenn smartphone (landscape und portrait) und tablet, nk*/
 .main-header {
   position: fixed;
   top: 0;
   width: 100%;
   background-color: var(--navy-blue);
 }
-
-/* @media screen and (max-width: 500px) {
-  .main-header {
-    height: 15%;
-  }
-} */
-
-/* @media screen and (max-width: 500px) {
-  .header-text {
-  }
-} */
 
 .header-brand {
   padding: var(--gap);
@@ -159,6 +133,7 @@ fairly essential to completing this challenge. */
 .main-content {
   margin-top: var(--main-content-margin-top);
   padding: var(--gap) 0 var(--gap) 0;
+  /* --gap: 20px; */
   background: var(--navy-blue);
 }
 
@@ -227,7 +202,6 @@ fairly essential to completing this challenge. */
 }
 
 /* Footer */
-/* Footer: auf smartphone und tablet auch direkt sichtbar ohne scrollen, nk */
 
 .main-footer {
   display: flex;
@@ -272,6 +246,18 @@ width, etc. */
 @media (min-width: 600px) {
   .header-brand {
   }
+  /* Weite von Bildern verringern */
+  .product-card {
+    width: 40%;
+    flex-wrap: wrap;
+  }
+  .intro-text {
+    width: 40%;
+  }
+  .card-section {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
 }
 
 /* Media Query Desktop */
@@ -281,4 +267,9 @@ width, etc. */
 @media (min-width: 1440px) {
   .header-brand {
   }
+  .--forest. {
+    width: 400px;
+  }
 }
+
+/* https://github.com/H-Alguen/web-challenges/blob/main/css-responsive_responsive-website/css/styles.css */

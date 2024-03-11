@@ -12,12 +12,10 @@ For that:
 ----> window.scrollY: the Y position of the window on the total webpage // window.scrollY is a property in JavaScript that returns the number of pixels the document has been scrolled vertically. It represents the vertical scroll position of the document. // For example, if the user has scrolled 100 pixels vertically from the top of the document, window.scrollY will return 100.
 
 ----> window.innerHeight: height of the window
-area of the browser window where content is displayed, excluding any browser chrome such as toolbars, status bars, etc. // nur der teil, der sichtbar ist ?
+area of the browser window where content is displayed, excluding any browser chrome such as toolbars, status bars, etc. // nur der teil, der sichtbar ist im browser // wofür brauchen wir das, wenn scrollY sich auf den ganzen body bezieht?
 
 ----> document.body.clientHeight: height of the webpage // 
-document.body.clientHeight provides the height of the entire body content area, including any padding and borders, but excluding margins.
-This property is specifically related to the height of the content within the <body> element.
-It may not accurately represent the height of the viewport if the body content overflows the viewport.
+document.body.clientHeight provides the height of the entire body content area, including any padding and borders, but excluding margins - auch das was gerade im browser nicht sichtbar ist (weil man dazu runterscrollen müsste)
 
 ///////////////////
  - change the width of the progressBar whenever the user scrolls down or up. Use your
@@ -29,21 +27,21 @@ It may not accurately represent the height of the viewport if the body content o
 
 const progressBar = document.querySelector('[data-js="progress-bar"]');
 
-// progressBar.style.width = 0;
+// progressBar.style.width = str(window.height / document.body.clientHeight) + `%`;
 
-// console.log(window.innerHeight); // 750
-// console.log(document.body.clientHeight); // 3160
-
-// ???? wie berechnen
 function calculateScrollPercentage() {
   const percentageScrolled =
-    (window.scrollY / document.body.clientHeight) * 100 + " %";
+    str(
+      (window.scrollY / (document.body.clientHeight - window.innerHeight)) * 100
+    ) + ` %`;
   return percentageScrolled;
 }
 
-console.log(calculateScrollPercentage());
-
-// was soll der eventhandler machen?
-progressBar.addEventListener("scroll", () => {
-  progressBar.style.width = calculateScrollPercentage();
+window.addEventListener("scroll", () => {
+  console.log("42");
 });
+
+// window.addEventListener("scroll", () => {
+//   const newWidth = calculateScrollPercentage();
+//   progressBar.style.width = str(newWidth);
+// });
